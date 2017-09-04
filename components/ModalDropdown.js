@@ -20,9 +20,12 @@ import {
   TouchableHighlight,
   Modal,
   ActivityIndicator,
+  Image
 } from 'react-native';
 
 const PropTypes = require('prop-types');
+
+const downIcon = require('../resources/downicon.png');
 
 const TOUCHABLE_ELEMENTS = ['TouchableHighlight', 'TouchableOpacity', 'TouchableWithoutFeedback', 'TouchableNativeFeedback'];
 
@@ -166,6 +169,7 @@ export default class ModalDropdown extends Component {
                     numberOfLines={1}>
                 {this.state.buttonText}
               </Text>
+              <Image style={[styles.buttonIcon, this.props.buttonIconStyle]} source={downIcon} />
             </View>
           )
         }
@@ -380,10 +384,19 @@ export default class ModalDropdown extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    justifyContent: 'center'
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   buttonText: {
-    fontSize: 12
+    fontSize: 12,
+    flexGrow: 1
+  },
+  buttonIcon: {
+    alignSelf: 'center',
+    margin: 5,
+    width: 20,
+    height: 20,
+    resizeMode: 'contain'
   },
   modal: {
     flexGrow: 1
@@ -395,7 +408,8 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
     borderRadius: 2,
     backgroundColor: 'white',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    elevation: 3
   },
   loading: {
     alignSelf: 'center'
