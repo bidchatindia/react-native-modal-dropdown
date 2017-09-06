@@ -25,7 +25,7 @@ import {
 
 const PropTypes = require('prop-types');
 
-const downIcon = require('../resources/downicon.png');
+const downIcon = require('../resources/select_arrow.png');
 
 const TOUCHABLE_ELEMENTS = ['TouchableHighlight', 'TouchableOpacity', 'TouchableWithoutFeedback', 'TouchableNativeFeedback'];
 
@@ -389,13 +389,15 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 12,
-    flexGrow: 1
+    flexGrow: 1,
+    borderRightWidth: 1,
+    borderColor: 'black'
   },
   buttonIcon: {
     alignSelf: 'center',
-    margin: 5,
-    width: 20,
-    height: 20,
+    margin: 8,
+    width: 10,
+    height: 10,
     resizeMode: 'contain'
   },
   modal: {
