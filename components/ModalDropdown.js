@@ -165,10 +165,12 @@ export default class ModalDropdown extends Component {
           this.props.children ||
           (
             <View style={styles.button}>
-              <Text style={[styles.buttonText, this.props.textStyle]}
-                    numberOfLines={1}>
-                {this.state.buttonText}
-              </Text>
+              <View style={styles.buttonTextContainer}>
+                <Text style={[styles.buttonText, this.props.textStyle]}
+                      numberOfLines={1}>
+                  {this.state.buttonText}
+                </Text>
+              </View>
               <Image style={[styles.buttonIcon, this.props.buttonIconStyle]} source={downIcon} />
             </View>
           )
@@ -387,11 +389,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  buttonText: {
-    fontSize: 12,
+  buttonTextContainer: {
     flexGrow: 1,
     borderRightWidth: 1,
     borderColor: 'black'
+  },
+  buttonText: {
+    fontSize: 12
   },
   buttonIcon: {
     alignSelf: 'center',
